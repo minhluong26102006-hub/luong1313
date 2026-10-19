@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model - Content-box vs Border-box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>📦 Box Model Demo</h1>
+    <p class="subtitle">So sánh content-box và border-box</p>
+
+    <div class="card-container">
+
+        <!-- Thẻ 1: content-box -->
+        <div class="card">
+            <span class="label">content-box</span>
+            <p class="title">Thẻ 1 — Content Box</p>
+            <p class="info">
+                width và height chỉ tính phần nội dung.
+                Padding + border được cộng thêm vào bên ngoài.
+            </p>
+        </div>
+
+        <!-- Thẻ 2: border-box -->
+        <div class="card">
+            <span class="label">border-box</span>
+            <p class="title">Thẻ 2 — Border Box</p>
+            <p class="info">
+                width và height đã bao gồm cả padding và border.
+                Kích thước tổng không thay đổi.
+            </p>
+        </div>
+
+        <!-- Thẻ 3: border-box -->
+        <div class="card">
+            <span class="label">border-box</span>
+            <p class="title">Thẻ 3 — Border Box</p>
+            <p class="info">
+                Giống thẻ 2, kích thước thực tế giữ nguyên
+                dù có padding và border.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Bảng so sánh kích thước -->
+    <div class="comparison">
+        <h2>📐 So sánh kích thước thực tế (Computed)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Thuộc tính</th>
+                    <th>Thẻ 1 (content-box)</th>
+                    <th>Thẻ 2 (border-box)</th>
+                    <th>Thẻ 3 (border-box)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>box-sizing</td>
+                    <td class="highlight-green">content-box</td>
+                    <td class="highlight-yellow">border-box</td>
+                    <td class="highlight-red">border-box</td>
+                </tr>
+                <tr>
+                    <td>width (CSS)</td>
+                    <td>280px</td>
+                    <td>280px</td>
+                    <td>280px</td>
+                </tr>
+                <tr>
+                    <td>height (CSS)</td>
+                    <td>150px</td>
+                    <td>150px</td>
+                    <td>150px</td>
+                </tr>
+                <tr>
+                    <td>padding</td>
+                    <td>20px (mỗi cạnh)</td>
+                    <td>20px (mỗi cạnh)</td>
+                    <td>20px (mỗi cạnh)</td>
+                </tr>
+                <tr>
+                    <td>border</td>
+                    <td>5px (mỗi cạnh)</td>
+                    <td>5px (mỗi cạnh)</td>
+                    <td>5px (mỗi cạnh)</td>
+                </tr>
+                <tr>
+                    <td>Tổng chiều rộng</td>
+                    <td class="highlight-green">280 + 20×2 + 5×2 = 330px</td>
+                    <td class="highlight-yellow">280px</td>
+                    <td class="highlight-red">280px</td>
+                </tr>
+                <tr>
+                    <td>Tổng chiều cao</td>
+                    <td class="highlight-green">150 + 20×2 + 5×2 = 200px</td>
+                    <td class="highlight-yellow">150px</td>
+                    <td class="highlight-red">150px</td>
+                </tr>
+                <tr>
+                    <td>Vùng nội dung thực</td>
+                    <td class="highlight-green">280 × 150px</td>
+                    <td class="highlight-yellow">230 × 100px</td>
+                    <td class="highlight-red">230 × 100px</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

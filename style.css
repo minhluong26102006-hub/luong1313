@@ -1,0 +1,193 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* ===== Tiêu đề ===== */
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* ===== Container chứa các thẻ ===== */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ===== Card chung ===== */
+.card {
+    width: 280px;
+    height: 150px;
+    padding: 20px;
+    border: 5px solid #3498db;
+    margin: 20px;
+    border-radius: 14px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Label góc trên ===== */
+.card .label {
+    position: absolute;
+    top: -14px;
+    left: 16px;
+    background: #1a1a2e;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.card .title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card .info {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* ===== Thẻ 1: content-box (xanh lá) ===== */
+.card:nth-child(1) {
+    box-sizing: content-box;
+    background-color: #2ecc71;
+}
+
+/* ===== Thẻ 2: border-box (vàng) ===== */
+.card:nth-child(2) {
+    box-sizing: border-box;
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+.card:nth-child(2) .label {
+    color: #f1c40f;
+    border-color: #f1c40f;
+}
+
+/* ===== Thẻ 3: border-box (đỏ) ===== */
+.card:nth-child(3) {
+    box-sizing: border-box;
+    background-color: #e74c3c;
+}
+
+.card:nth-child(3) .label {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+/* ===== Bảng so sánh ===== */
+.comparison {
+    margin-top: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 36px 32px;
+    max-width: 750px;
+    width: 100%;
+}
+
+.comparison h2 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison thead th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.comparison tbody td {
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comparison tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.comparison tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.highlight-green {
+    color: #2ecc71 !important;
+    font-weight: 700 !important;
+}
+
+.highlight-yellow {
+    color: #f1c40f !important;
+    font-weight: 700 !important;
+}
+
+.highlight-red {
+    color: #e74c3c !important;
+    font-weight: 700 !important;
+}

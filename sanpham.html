@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sản Phẩm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        thead th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px 24px;
+            text-align: left;
+        }
+
+        thead th:first-child {
+            text-align: center;
+            width: 60px;
+        }
+
+        thead th:nth-child(3) {
+            text-align: right;
+        }
+
+        thead th:nth-child(4) {
+            text-align: center;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        tbody td {
+            padding: 16px 24px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        tbody td:first-child {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        tbody td:nth-child(3) {
+            text-align: right;
+            font-weight: 600;
+            color: #7bed9f;
+        }
+
+        tbody td:nth-child(4) {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        tbody tr:nth-child(even):hover {
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        /* Badge cho số lượng */
+        .qty-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* Tổng cộng */
+        tfoot td {
+            padding: 18px 24px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid rgba(102, 126, 234, 0.4);
+        }
+
+        tfoot td:nth-child(2) {
+            text-align: right;
+            color: #7bed9f;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 16px;
+            }
+
+            thead th,
+            tbody td,
+            tfoot td {
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🛒 Danh Sách Sản Phẩm</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Laptop Dell Inspiron 15</td>
+                    <td>15.990.000 ₫</td>
+                    <td><span class="qty-badge">12</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chuột không dây Logitech M331</td>
+                    <td>390.000 ₫</td>
+                    <td><span class="qty-badge">50</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Bàn phím cơ Akko 3068B</td>
+                    <td>1.290.000 ₫</td>
+                    <td><span class="qty-badge">25</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Tai nghe Sony WH-1000XM5</td>
+                    <td>7.490.000 ₫</td>
+                    <td><span class="qty-badge">8</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Màn hình Samsung 27" 4K</td>
+                    <td>6.990.000 ₫</td>
+                    <td><span class="qty-badge">15</span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>USB Kingston 64GB</td>
+                    <td>150.000 ₫</td>
+                    <td><span class="qty-badge">100</span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Tổng số sản phẩm: 6</td>
+                    <td><span class="qty-badge">210</span></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+</html>
